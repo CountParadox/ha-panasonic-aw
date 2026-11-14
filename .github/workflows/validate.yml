@@ -18,6 +18,8 @@ jobs:
       - uses: hacs/action@main
         with:
           category: integration
+          # No brand icon yet; HACS installs work without one.
+          ignore: brands
 
   tests:
     runs-on: ubuntu-latest
@@ -26,5 +28,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14"
-      - run: pip install pytest-homeassistant-custom-component
+      # The camera platform needs these; Home Assistant itself always ships them.
+      - run: pip install pytest-homeassistant-custom-component PyTurboJPEG av numpy
       - run: pytest tests
