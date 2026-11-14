@@ -1,0 +1,27 @@
+"""Constants for the Panasonic AW PTZ camera integration."""
+
+DOMAIN = "panasonic_aw"
+MANUFACTURER = "Panasonic"
+
+CONF_SCAN_INTERVAL = "scan_interval"
+CONF_SNAPSHOT_RESOLUTION = "snapshot_resolution"
+CONF_RTSP_PORT = "rtsp_port"
+
+DEFAULT_PORT = 80
+DEFAULT_RTSP_PORT = 554
+DEFAULT_SCAN_INTERVAL = 10
+DEFAULT_SNAPSHOT_RESOLUTION = 1280
+SNAPSHOT_RESOLUTIONS = [320, 640, 1280, 1920]
+
+PRESET_COUNT = 100
+NUDGE_SPEED = 30
+NUDGE_SECONDS = 0.4
+MAX_MOVE_SECONDS = 10
+
+SERVICE_PTZ = "ptz"
+SERVICE_STOP = "stop"
+SERVICE_PRESET_RECALL = "preset_recall"
+SERVICE_PRESET_SAVE = "preset_save"
+SERVICE_PRESET_DELETE = "preset_delete"
+SERVICE_MOVE_ABSOLUTE = "move_absolute"
+SERVICE_SEND_COMMAND = "send_command"

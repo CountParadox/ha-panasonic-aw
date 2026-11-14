@@ -1,0 +1,51 @@
+{
+  "entity": {
+    "switch": {
+      "power": { "default": "mdi:power" },
+      "tally": { "default": "mdi:record-circle" },
+      "autofocus": { "default": "mdi:focus-auto" },
+      "auto_iris": { "default": "mdi:camera-iris" },
+      "auto_gain": { "default": "mdi:brightness-auto" },
+      "night_mode": { "default": "mdi:weather-night" },
+      "color_bars": { "default": "mdi:television-guide" },
+      "ceiling_mount": { "default": "mdi:rotate-3d-variant" }
+    },
+    "select": {
+      "preset": { "default": "mdi:bookmark-multiple" },
+      "scene": { "default": "mdi:palette" },
+      "white_balance": { "default": "mdi:white-balance-auto" },
+      "noise_reduction": { "default": "mdi:blur" }
+    },
+    "number": {
+      "zoom": { "default": "mdi:magnify-plus-outline" },
+      "focus": { "default": "mdi:image-filter-center-focus" },
+      "iris": { "default": "mdi:camera-iris" },
+      "pan": { "default": "mdi:pan-horizontal" },
+      "tilt": { "default": "mdi:pan-vertical" },
+      "gain": { "default": "mdi:brightness-6" },
+      "preset_speed": { "default": "mdi:speedometer" }
+    },
+    "button": {
+      "pan_left": { "default": "mdi:arrow-left-bold" },
+      "pan_right": { "default": "mdi:arrow-right-bold" },
+      "tilt_up": { "default": "mdi:arrow-up-bold" },
+      "tilt_down": { "default": "mdi:arrow-down-bold" },
+      "zoom_in": { "default": "mdi:magnify-plus" },
+      "zoom_out": { "default": "mdi:magnify-minus" },
+      "stop": { "default": "mdi:stop" },
+      "home": { "default": "mdi:home" },
+      "one_touch_autofocus": { "default": "mdi:focus-field" },
+      "auto_white_balance": { "default": "mdi:white-balance-sunny" },
+      "auto_black_balance": { "default": "mdi:circle-half-full" }
+    }
+  },
+  "services": {
+    "ptz": { "service": "mdi:pan" },
+    "stop": { "service": "mdi:stop" },
+    "preset_recall": { "service": "mdi:bookmark-check" },
+    "preset_save": { "service": "mdi:bookmark-plus" },
+    "preset_delete": { "service": "mdi:bookmark-remove" },
+    "move_absolute": { "service": "mdi:crosshairs-gps" },
+    "send_command": { "service": "mdi:console" }
+  }
+}

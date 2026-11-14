@@ -1,0 +1,13 @@
+{
+  "domain": "panasonic_aw",
+  "name": "Panasonic AW PTZ Camera",
+  "codeowners": ["@CountParadox"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/CountParadox/ha-panasonic-aw",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/CountParadox/ha-panasonic-aw/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
