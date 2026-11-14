@@ -6,9 +6,9 @@ such as the AW-HE38, AW-HE40, AW-HE42, AW-UE70 and similar.
 
 It talks to the camera directly over your LAN. No cloud, no extra software.
 
-> **Status:** written from Panasonic's *HD Integrated Camera Interface
-> Specifications* and tested inside Home Assistant against a simulated camera.
-> It has not yet been run against real hardware.
+> **Status:** tested against an AW-HE38 (firmware 2.1) for status polling,
+> snapshots, the RTSP stream and stop. Other models in the family should work but
+> are untested.
 
 ## Features
 

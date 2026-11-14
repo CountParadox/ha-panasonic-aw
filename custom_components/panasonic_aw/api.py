@@ -402,6 +402,10 @@ class PanasonicAwClient:
                     info["firmware"] = value
         except PanasonicAwError:
             pass
+        # Sibling models share firmware and answer QID with the family name (an
+        # AW-HE38 reports AW-HE40); getinfo's NAME carries the real model.
+        if info.get("name", "").upper().startswith(("AW-", "AK-")):
+            info["model"] = info["name"]
         self.info = info
         return info
 
