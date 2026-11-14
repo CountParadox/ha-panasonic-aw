@@ -83,6 +83,8 @@ class FakeCamera:
             block = int(cmd[3])
             bits = sum(1 << (p - block * 40) for p in self.presets if p // 40 == block)
             return f"pE0{block}{bits:010X}"
+        if cmd.startswith("F") and self.autofocus:
+            return f"eR3:{cmd}"  # manual focus is refused while autofocus is on
         if cmd.startswith(("PTS", "Z", "F")):
             return cmd[0].lower() + cmd[1:]
         return "eR1"  # D6, UPVS, INS: not supported by this fake
@@ -180,6 +182,10 @@ async def test_move_and_presets(camera):
     assert fake.log[-1] == "PTS0199"
     await client.move(zoom=50)
     assert fake.log[-1] == "Z74"
+    # Autofocus is on, so the camera refuses F50; stop must still succeed.
+    await client.stop()
+    assert fake.log[-3:] == ["PTS5050", "Z50", "F50"]
+    fake.autofocus = 0
     await client.stop()
     assert fake.log[-3:] == ["PTS5050", "Z50", "F50"]
 

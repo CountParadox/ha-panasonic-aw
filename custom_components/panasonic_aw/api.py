@@ -467,4 +467,20 @@ class PanasonicAwClient:
             await self.ptz(f"F{speed_to_code(focus)}")
 
     async def stop(self) -> None:
-        await self.move(pan=0, tilt=0, zoom=0, focus=0)
+        """Stop pan, tilt, zoom and focus.
+
+        Every axis is tried even if one fails. Cameras reject the focus stop
+        while autofocus is on (ER3), so a rejected focus command is ignored.
+        """
+        error: PanasonicAwCommandError | None = None
+        for command in ("PTS5050", "Z50"):
+            try:
+                await self.ptz(command)
+            except PanasonicAwCommandError as err:
+                error = error or err
+        try:
+            await self.ptz("F50")
+        except PanasonicAwCommandError as err:
+            _LOGGER.debug("Focus stop not accepted: %s", err)
+        if error:
+            raise error
