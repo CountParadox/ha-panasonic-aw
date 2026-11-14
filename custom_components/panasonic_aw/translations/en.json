@@ -35,42 +35,108 @@
   },
   "entity": {
     "switch": {
-      "power": { "name": "Power" },
-      "tally": { "name": "Tally" },
-      "autofocus": { "name": "Autofocus" },
-      "auto_iris": { "name": "Auto iris" },
-      "auto_gain": { "name": "Auto gain" },
-      "night_mode": { "name": "Night mode" },
-      "color_bars": { "name": "Color bars" },
-      "ceiling_mount": { "name": "Ceiling mount" }
+      "power": {
+        "name": "Power"
+      },
+      "tally": {
+        "name": "Tally"
+      },
+      "autofocus": {
+        "name": "Autofocus"
+      },
+      "auto_iris": {
+        "name": "Auto iris"
+      },
+      "auto_gain": {
+        "name": "Auto gain"
+      },
+      "night_mode": {
+        "name": "Night mode"
+      },
+      "color_bars": {
+        "name": "Color bars"
+      },
+      "ceiling_mount": {
+        "name": "Ceiling mount"
+      }
     },
     "select": {
-      "preset": { "name": "Preset" },
-      "scene": { "name": "Scene" },
-      "white_balance": { "name": "White balance" },
-      "noise_reduction": { "name": "Noise reduction" }
+      "preset": {
+        "name": "Preset"
+      },
+      "scene": {
+        "name": "Scene"
+      },
+      "white_balance": {
+        "name": "White balance"
+      },
+      "noise_reduction": {
+        "name": "Noise reduction"
+      }
     },
     "number": {
-      "zoom": { "name": "Zoom" },
-      "focus": { "name": "Focus" },
-      "iris": { "name": "Iris" },
-      "pan": { "name": "Pan" },
-      "tilt": { "name": "Tilt" },
-      "gain": { "name": "Gain" },
-      "preset_speed": { "name": "Preset speed" }
+      "zoom": {
+        "name": "Zoom"
+      },
+      "focus": {
+        "name": "Focus"
+      },
+      "iris": {
+        "name": "Iris"
+      },
+      "pan": {
+        "name": "Pan"
+      },
+      "tilt": {
+        "name": "Tilt"
+      },
+      "gain": {
+        "name": "Gain"
+      },
+      "preset_speed": {
+        "name": "Preset speed"
+      },
+      "preset_slot": {
+        "name": "Preset to save"
+      }
     },
     "button": {
-      "pan_left": { "name": "Pan left" },
-      "pan_right": { "name": "Pan right" },
-      "tilt_up": { "name": "Tilt up" },
-      "tilt_down": { "name": "Tilt down" },
-      "zoom_in": { "name": "Zoom in" },
-      "zoom_out": { "name": "Zoom out" },
-      "stop": { "name": "Stop" },
-      "home": { "name": "Home position" },
-      "one_touch_autofocus": { "name": "One-touch autofocus" },
-      "auto_white_balance": { "name": "Auto white balance" },
-      "auto_black_balance": { "name": "Auto black balance" }
+      "pan_left": {
+        "name": "Pan left"
+      },
+      "pan_right": {
+        "name": "Pan right"
+      },
+      "tilt_up": {
+        "name": "Tilt up"
+      },
+      "tilt_down": {
+        "name": "Tilt down"
+      },
+      "zoom_in": {
+        "name": "Zoom in"
+      },
+      "zoom_out": {
+        "name": "Zoom out"
+      },
+      "stop": {
+        "name": "Stop"
+      },
+      "home": {
+        "name": "Home position"
+      },
+      "one_touch_autofocus": {
+        "name": "One-touch autofocus"
+      },
+      "auto_white_balance": {
+        "name": "Auto white balance"
+      },
+      "auto_black_balance": {
+        "name": "Auto black balance"
+      },
+      "save_preset": {
+        "name": "Save preset"
+      }
     }
   },
   "services": {
@@ -78,11 +144,26 @@
       "name": "Move (continuous)",
       "description": "Starts a continuous pan, tilt, zoom or focus move. Speeds are -100 to 100; 0 stops that axis. Without a duration the camera keeps moving until it is stopped.",
       "fields": {
-        "pan": { "name": "Pan speed", "description": "Negative is left, positive is right." },
-        "tilt": { "name": "Tilt speed", "description": "Negative is down, positive is up." },
-        "zoom": { "name": "Zoom speed", "description": "Negative is wide, positive is tele." },
-        "focus": { "name": "Focus speed", "description": "Negative is near, positive is far." },
-        "duration": { "name": "Duration", "description": "Stop automatically after this many seconds." }
+        "pan": {
+          "name": "Pan speed",
+          "description": "Negative is left, positive is right."
+        },
+        "tilt": {
+          "name": "Tilt speed",
+          "description": "Negative is down, positive is up."
+        },
+        "zoom": {
+          "name": "Zoom speed",
+          "description": "Negative is wide, positive is tele."
+        },
+        "focus": {
+          "name": "Focus speed",
+          "description": "Negative is near, positive is far."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "Stop automatically after this many seconds."
+        }
       }
     },
     "stop": {
@@ -93,38 +174,62 @@
       "name": "Recall preset",
       "description": "Moves the camera to a saved preset.",
       "fields": {
-        "preset": { "name": "Preset", "description": "Preset number (1-100)." }
+        "preset": {
+          "name": "Preset",
+          "description": "Preset number (1-100)."
+        }
       }
     },
     "preset_save": {
       "name": "Save preset",
       "description": "Saves the current position and picture settings to a preset.",
       "fields": {
-        "preset": { "name": "Preset", "description": "Preset number (1-100)." }
+        "preset": {
+          "name": "Preset",
+          "description": "Preset number (1-100)."
+        }
       }
     },
     "preset_delete": {
       "name": "Delete preset",
       "description": "Deletes a saved preset.",
       "fields": {
-        "preset": { "name": "Preset", "description": "Preset number (1-100)." }
+        "preset": {
+          "name": "Preset",
+          "description": "Preset number (1-100)."
+        }
       }
     },
     "move_absolute": {
       "name": "Move to position",
       "description": "Moves to an absolute pan/tilt position in degrees and/or a zoom position in percent.",
       "fields": {
-        "pan": { "name": "Pan", "description": "Pan angle in degrees (0 is centre)." },
-        "tilt": { "name": "Tilt", "description": "Tilt angle in degrees (0 is level, positive is up)." },
-        "zoom": { "name": "Zoom", "description": "Zoom position in percent (0 is wide)." }
+        "pan": {
+          "name": "Pan",
+          "description": "Pan angle in degrees (0 is centre)."
+        },
+        "tilt": {
+          "name": "Tilt",
+          "description": "Tilt angle in degrees (0 is level, positive is up)."
+        },
+        "zoom": {
+          "name": "Zoom",
+          "description": "Zoom position in percent (0 is wide)."
+        }
       }
     },
     "send_command": {
       "name": "Send raw command",
       "description": "Sends any command from the Panasonic interface specification and returns the camera's answer.",
       "fields": {
-        "interface": { "name": "Interface", "description": "ptz for pan/tilt head commands (aw_ptz, without the #), cam for camera commands (aw_cam)." },
-        "command": { "name": "Command", "description": "For example APC, R01, QGU or OGU:80." }
+        "interface": {
+          "name": "Interface",
+          "description": "ptz for pan/tilt head commands (aw_ptz, without the #), cam for camera commands (aw_cam)."
+        },
+        "command": {
+          "name": "Command",
+          "description": "For example APC, R01, QGU or OGU:80."
+        }
       }
     }
   }

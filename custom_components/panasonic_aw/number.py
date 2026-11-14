@@ -10,6 +10,7 @@ from homeassistant.components.number import (
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
+    RestoreNumber,
 )
 from homeassistant.const import DEGREE, PERCENTAGE, EntityCategory
 from homeassistant.core import HomeAssistant
@@ -33,6 +34,7 @@ from .api import (
     position_to_percent,
     tilt_to_degrees,
 )
+from .const import PRESET_COUNT
 from .coordinator import PanasonicAwConfigEntry, PanasonicAwCoordinator
 from .entity import PanasonicAwEntity
 
@@ -132,11 +134,13 @@ async def async_setup_entry(
     async_add_entities: AddEntitiesCallback,
 ) -> None:
     coordinator = entry.runtime_data
-    async_add_entities(
+    entities: list[NumberEntity] = [AwPresetSlot(coordinator)]
+    entities.extend(
         AwNumber(coordinator, description)
         for description in NUMBERS
         if description.state_key not in coordinator.client.unsupported
     )
+    async_add_entities(entities)
 
 
 class AwNumber(PanasonicAwEntity, NumberEntity):
@@ -159,3 +163,33 @@ class AwNumber(PanasonicAwEntity, NumberEntity):
 
     async def async_set_native_value(self, value: float) -> None:
         await self.entity_description.set_value(self.coordinator, value)
+
+
+class AwPresetSlot(PanasonicAwEntity, RestoreNumber):
+    """The preset number the "Save preset" button writes to.
+
+    Kept in Home Assistant only; nothing is sent to the camera when it changes.
+    """
+
+    _attr_native_min_value = 1
+    _attr_native_max_value = PRESET_COUNT
+    _attr_native_step = 1
+    _attr_mode = NumberMode.BOX
+    _needs_power = False
+
+    def __init__(self, coordinator: PanasonicAwCoordinator) -> None:
+        super().__init__(coordinator, "preset_slot")
+
+    async def async_added_to_hass(self) -> None:
+        await super().async_added_to_hass()
+        last = await self.async_get_last_number_data()
+        if last is not None and last.native_value is not None:
+            self.coordinator.preset_slot = int(last.native_value)
+
+    @property
+    def native_value(self) -> float:
+        return self.coordinator.preset_slot
+
+    async def async_set_native_value(self, value: float) -> None:
+        self.coordinator.preset_slot = int(value)
+        self.async_write_ha_state()

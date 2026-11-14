@@ -36,6 +36,9 @@ BUTTONS: tuple[AwButtonDescription, ...] = (
     AwButtonDescription(
         key="one_touch_autofocus", press=lambda c: c.async_cam("OSE:69:1")
     ),
+    AwButtonDescription(
+        key="save_preset", press=lambda c: c.async_preset_save(c.preset_slot)
+    ),
     AwButtonDescription(key="auto_white_balance", press=lambda c: c.async_cam("OWS")),
     AwButtonDescription(key="auto_black_balance", press=lambda c: c.async_cam("OAS")),
 )

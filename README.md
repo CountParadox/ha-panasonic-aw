@@ -58,13 +58,16 @@ snapshot width and RTSP port.
 | Camera | Live view |
 | Switch | Power, Tally, Autofocus, Auto iris, Auto gain, Night mode, Color bars, Ceiling mount (disabled by default) |
 | Select | Preset, Scene, White balance, Noise reduction |
-| Number | Zoom, Focus, Iris (%), Pan, Tilt (°), Gain (dB), Preset speed |
-| Button | Pan left/right, Tilt up/down, Zoom in/out, Stop, Home position, One-touch autofocus, Auto white balance, Auto black balance |
+| Number | Zoom, Focus, Iris (%), Pan, Tilt (°), Gain (dB), Preset speed, Preset to save |
+| Button | Pan left/right, Tilt up/down, Zoom in/out, Stop, Home position, Save preset, One-touch autofocus, Auto white balance, Auto black balance |
 
 Everything except **Power** is unavailable while the camera is in standby.
 
 The **Preset** select lists the presets saved in the camera and shows the one
 recalled last. Choosing an option recalls it.
+
+To save a preset from the dashboard, frame the shot, set **Preset to save** to
+the preset number and press **Save preset**. This overwrites that preset.
 
 ## Actions
 

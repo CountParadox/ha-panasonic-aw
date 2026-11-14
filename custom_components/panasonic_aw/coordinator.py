@@ -53,6 +53,8 @@ class PanasonicAwCoordinator(DataUpdateCoordinator[dict[str, Any]]):
             ),
         )
         self.client = client
+        # Preset number (1-100) the "Save preset" button writes to.
+        self.preset_slot = 1
 
     async def _async_update_data(self) -> dict[str, Any]:
         try:

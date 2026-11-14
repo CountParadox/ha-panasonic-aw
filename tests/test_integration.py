@@ -134,6 +134,20 @@ async def test_entities_and_actions(hass: HomeAssistant, fake_camera: FakeCamera
     )
     assert fake_camera.autofocus == 0
 
+    # Save from the dashboard entities: pick the slot, then press the button.
+    assert hass.states.get("number.studio_cam_preset_to_save").state == "1"
+    await hass.services.async_call(
+        "number",
+        "set_value",
+        {"entity_id": "number.studio_cam_preset_to_save", "value": 12},
+        blocking=True,
+    )
+    await hass.services.async_call(
+        "button", "press", {"entity_id": "button.studio_cam_save_preset"}, blocking=True
+    )
+    assert 11 in fake_camera.presets
+    assert 12 in hass.states.get("select.studio_cam_preset").attributes["saved_presets"]
+
     response = await hass.services.async_call(
         DOMAIN,
         "send_command",
