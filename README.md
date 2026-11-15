@@ -145,3 +145,9 @@ The protocol client lives in `custom_components/panasonic_aw/api.py` and has no
 Home Assistant dependency. Its tests also run with only `aiohttp`, `pytest` and
 `pytest-asyncio` installed; the Home Assistant setup tests are skipped then.
 The Home Assistant test harness does not support Windows.
+
+## Trademark
+
+Panasonic and the Panasonic logo are trademarks of Panasonic Holdings
+Corporation. The logo is used only to identify the cameras this integration
+controls; this project is not affiliated with or endorsed by Panasonic.
